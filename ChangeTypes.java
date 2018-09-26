@@ -2,7 +2,7 @@ package zz.ebs.dmcomp;
 
 import string.ICharSequence;
 import string.String;
-import string.CString;
+import static string.util.AsciiStringFactoryInternals.astr;
 
 /**
 * Utility with constants and static methods that are handy in dealing with change types.<br>
@@ -48,11 +48,11 @@ public class ChangeTypes {
 	private static String[] CODES = new String[NUMBER_OF_VANILLA_CHANGE_TYPES + 4];
 	static {
 		CODES[0] = String.EMPTY;
-		CODES[Added_in_12_2_6] = CString.valueOf(new byte[]{'A', '1', '2', '2', '6'}, true, true);
-		CODES[Removed_in_12_2_6] = CString.valueOf(new byte[]{'R', '1', '2', '2', '6'}, true, true);
-		CODES[Attribute_Changes_between_12_1_3_and_12_2_6] = CString.valueOf(new byte[]{'A', (byte)'C', '1', '3', '2', '6'}, true, true);
-		CODES[Objects_Added_in_12_2_6] = CString.valueOf(new byte[]{'O', (byte)'A', '1', '2', '2', '6'}, true, true);
-		CODES[Objects_Removed_in_12_2_6] = CString.valueOf(new byte[]{'O', (byte)'R', '1', '2', '2', '6'}, true, true);
+		CODES[Added_in_12_2_6] = astr(new byte[]{'A', '1', '2', '2', '6'});
+		CODES[Removed_in_12_2_6] = astr(new byte[]{'R', '1', '2', '2', '6'});
+		CODES[Attribute_Changes_between_12_1_3_and_12_2_6] = astr(new byte[]{'A', 'C', '1', '3', '2', '6'});
+		CODES[Objects_Added_in_12_2_6] = astr(new byte[]{'O', 'A', '1', '2', '2', '6'});
+		CODES[Objects_Removed_in_12_2_6] = astr(new byte[]{'O', 'R', '1', '2', '2', '6'});
 	}
 	public static final String getShortCode(final int chgType) {
 		if (chgType > NUMBER_OF_VANILLA_CHANGE_TYPES) {

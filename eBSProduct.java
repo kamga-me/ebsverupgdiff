@@ -2,8 +2,7 @@ package zz.ebs;
 
 import string.ICharSequence;
 import string.String;
-import string.CString;
-import string.Code;
+import static string.util.AsciiStringFactoryInternals.astr;
 
 /**
 * Class for providing support for the products for which the diffs-comparison is performed.<br>
@@ -107,22 +106,22 @@ public final class eBSProduct extends core.Thing implements java.io.Serializable
 	
 	private static final eBSProduct[] VANILLA_PRODUCTS = {
 		NO_PRODUCT/*dummy/placeholder*/
-		, new eBSProduct(eBSProducts.GL, new Code((byte)'G', (byte)'L'), CString.valueOf(new byte[]{'G', 'e', 'n', 'e', 'r', 'a', 'l', ' ', 'L', 'e', 'd', 'g', 'e', 'r'}, true, true)) 
-		, new eBSProduct(eBSProducts.AR, new Code((byte)'A', (byte)'R'), CString.valueOf(new byte[]{'R', 'e', 'c', 'e', 'i', 'v', 'a', 'b', 'l', 'e', 's'}, true, true)) 
-		, new eBSProduct(eBSProducts.AP, new Code((byte)'A', (byte)'P'), CString.valueOf(new byte[]{'P', 'a', 'y', 'a', 'b', 'l', 'e', 's'}, true, true)) 
-		, new eBSProduct(eBSProducts.PA, new Code((byte)'P', (byte)'A'), CString.valueOf(new byte[]{'P', 'r', 'o', 'j', 'e', 'c', 't', 's'}, true, true)) 
-		, new eBSProduct(eBSProducts.BOM, new Code.Code3((byte)'B', (byte)'O', (byte)'M'), CString.valueOf(new byte[]{'B', 'i', 'l', 'l', 's', ' ', 'o', 'f', ' ', 'M', 'a', 't', 'e', 'r', 'i', 'a', 'l'}, true, true)) 
-		, new eBSProduct(eBSProducts.INV, new Code.Code3((byte)'I', (byte)'N', (byte)'V'), CString.valueOf(new byte[]{'I', 'n', 'v', 'e', 'n', 't', 'o', 'r', 'y'}, true, true)) 
-		, new eBSProduct(eBSProducts.OE, new Code((byte)'O', (byte)'E'), CString.valueOf(new byte[]{'O', 'r', 'd', 'e', 'r', ' ', 'E', 'n', 't', 'r', 'y'}, true, true)) 
-		, new eBSProduct(eBSProducts.MRP, new Code.Code3((byte)'M', (byte)'R', (byte)'P'), CString.valueOf(new byte[]{'M', 'a', 's', 't', 'e', 'r', ' ', 'S', 'c', 'h', 'e', 'd', 'u', 'l', 'i', 'n', 'g', '/', 'M', 'R', 'P'}, true, true)) 
-		, new eBSProduct(eBSProducts.OZF, new Code.Code3((byte)'O', (byte)'Z', (byte)'F'), CString.valueOf(new byte[]{'T', 'r', 'a', 'd', 'e', ' ', 'M', 'a', 'n', 'a', 'g', 'e', 'm', 'e', 'n', 't'}, true, true)) 
-		, new eBSProduct(eBSProducts.PO, new Code((byte)'P', (byte)'O'), CString.valueOf(new byte[]{'P', 'u', 'r', 'c', 'h', 'a', 's', 'i', 'n', 'g'}, true, true)) 
+		, new eBSProduct(eBSProducts.GL, astr('G', 'L'), astr(new byte[]{'G', 'e', 'n', 'e', 'r', 'a', 'l', ' ', 'L', 'e', 'd', 'g', 'e', 'r'})) 
+		, new eBSProduct(eBSProducts.AR, astr('A', 'R'), astr(new byte[]{'R', 'e', 'c', 'e', 'i', 'v', 'a', 'b', 'l', 'e', 's'})) 
+		, new eBSProduct(eBSProducts.AP, astr('A', 'P'), astr(new byte[]{'P', 'a', 'y', 'a', 'b', 'l', 'e', 's'})) 
+		, new eBSProduct(eBSProducts.PA, astr('P', 'A'), astr(new byte[]{'P', 'r', 'o', 'j', 'e', 'c', 't', 's'})) 
+		, new eBSProduct(eBSProducts.BOM, astr('B', 'O', 'M'), astr(new byte[]{'B', 'i', 'l', 'l', 's', ' ', 'o', 'f', ' ', 'M', 'a', 't', 'e', 'r', 'i', 'a', 'l'})) 
+		, new eBSProduct(eBSProducts.INV, astr('I', 'N', 'V'), astr(new byte[]{'I', 'n', 'v', 'e', 'n', 't', 'o', 'r', 'y'})) 
+		, new eBSProduct(eBSProducts.OE, astr('O', 'E'), astr(new byte[]{'O', 'r', 'd', 'e', 'r', ' ', 'E', 'n', 't', 'r', 'y'})) 
+		, new eBSProduct(eBSProducts.MRP, astr('M', 'R', 'P'), astr(new byte[]{'M', 'a', 's', 't', 'e', 'r', ' ', 'S', 'c', 'h', 'e', 'd', 'u', 'l', 'i', 'n', 'g', '/', 'M', 'R', 'P'})) 
+		, new eBSProduct(eBSProducts.OZF, astr('O', 'Z', 'F'), astr(new byte[]{'T', 'r', 'a', 'd', 'e', ' ', 'M', 'a', 'n', 'a', 'g', 'e', 'm', 'e', 'n', 't'})) 
+		, new eBSProduct(eBSProducts.PO, astr('P', 'O'), astr(new byte[]{'P', 'u', 'r', 'c', 'h', 'a', 's', 'i', 'n', 'g'})) 
 		
-		, new eBSProduct(eBSProducts.AMS, new Code.Code3((byte)'A', (byte)'M', (byte)'S'), CString.valueOf(new byte[]{'M', 'a', 'r', 'k', 'e', 't', 'i', 'n', 'g'}, true, true)) 
-		, new eBSProduct(eBSProducts.IEX, new Code.Code3((byte)'I', (byte)'E', (byte)'X'), CString.valueOf(new byte[]{'C', 'o', 'l', 'l', 'e', 'c', 't', 'i', 'o', 'n', 's'}, true, true)) 
+		, new eBSProduct(eBSProducts.AMS, astr('A', 'M', 'S'), astr(new byte[]{'M', 'a', 'r', 'k', 'e', 't', 'i', 'n', 'g'})) 
+		, new eBSProduct(eBSProducts.IEX, astr('I', 'E', 'X'), astr(new byte[]{'C', 'o', 'l', 'l', 'e', 'c', 't', 'i', 'o', 'n', 's'})) 
 		
-		, new eBSProduct(eBSProducts.QP, new Code((byte)'Q', (byte)'P'), CString.valueOf(new byte[]{'A', 'd', 'v', 'a', 'n', 'c', 'e', 'd', ' ', 'P', 'r', 'i', 'c', 'i', 'n', 'g'}, true, true)) 
-		, new eBSProduct(eBSProducts.XLA, new Code.Code3((byte)'X', (byte)'L', (byte)'A'), CString.valueOf(new byte[]{'S', 'u', 'b', 'l', 'e', 'd', 'g', 'e', 'r', ' ', 'A', 'c', 'c', 'o', 'u', 'n', 't', 'i', 'n', 'g'}, true, true)) 
+		, new eBSProduct(eBSProducts.QP, astr('Q', 'P'), astr(new byte[]{'A', 'd', 'v', 'a', 'n', 'c', 'e', 'd', ' ', 'P', 'r', 'i', 'c', 'i', 'n', 'g'})) 
+		, new eBSProduct(eBSProducts.XLA, astr('X', 'L', 'A'), astr(new byte[]{'S', 'u', 'b', 'l', 'e', 'd', 'g', 'e', 'r', ' ', 'A', 'c', 'c', 'o', 'u', 'n', 't', 'i', 'n', 'g'})) 
 	};
 	
 	

@@ -2,7 +2,7 @@ package zz.ebs.dmcomp;
 
 import string.ICharSequence;
 import string.String;
-import string.CString;
+import static string.util.AsciiStringFactoryInternals.astr;
 
 /**
 * Utility with constants and static methods that are handy in dealing with change categories.<br>
@@ -29,8 +29,8 @@ public class DiffsCompCategories {
 	
 	private static String[] CODES = new String[NUMBER_OF_VANILLA_DIFFS_COMP_CATEGORIES + 3];
 	static {
-		CODES[Object_Definition_Differences] = new string.Code.Code3((byte)'O', (byte)'D', (byte)'D');
-		CODES[Indexed_Tables_and_Columns] = new string.Code.Code4((byte)'I', (byte)'T', (byte)'a', (byte)'C');
+		CODES[Object_Definition_Differences] = astr('O', 'D', 'D');
+		CODES[Indexed_Tables_and_Columns] = astr('I', 'T', 'a', 'C');
 	}
 	
 	
