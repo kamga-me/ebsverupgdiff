@@ -2,7 +2,7 @@ package zz.ebs.dmcomp;
 
 import string.ICharSequence;
 import string.String;
-import string.CString;
+import static string.util.AsciiStringFactoryInternals.astr;
 
 /**
 * Utility with constants and static methods that are handy in dealing with change categories.<br>
@@ -42,11 +42,11 @@ public class ChangeCategories {
 	private static String[] CODES = new String[NUMBER_OF_VANILLA_CHG_CATEGORIES + 4];
 	static {
 		CODES[0] = String.EMPTY;
-		CODES[Added] = string.Char.valueOf('A');
-		CODES[Removed] = string.Char.valueOf('R');
-		CODES[Attribute_Changes] = new string.Code((byte)'A', (byte)'C');
-		CODES[Objects_Added] = new string.Code((byte)'O', (byte)'A');
-		CODES[Objects_Removed] = new string.Code((byte)'O', (byte)'R');
+		CODES[Added] = astr('A');
+		CODES[Removed] = astr('R');
+		CODES[Attribute_Changes] = astr('A', 'C');
+		CODES[Objects_Added] = astr('O', 'A');
+		CODES[Objects_Removed] = astr('O', 'R');
 	}
 	public static final String getShortCode(final byte chgCat) {
 		if (chgCat > NUMBER_OF_VANILLA_CHG_CATEGORIES) {
