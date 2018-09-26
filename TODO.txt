@@ -1,0 +1,9 @@
+INFO - TODO
+	Manually create a tag in status LOADING_INTO_BAW: DONE
+	resolve text "_Ch4xx"
+	resolve prefix of the secondary file ref (e.g. "1#DDD" ==> "GL_xxx#DDDD")
+	fix: last entry of set (e.g. detail changed type set) never get found : FIXED
+	fix: new entries of set are not shared across files???! : FIXED
+	fix: for text, in case of no hyperlink check if the text contains " => ", in which case the text must be broken in from-to form : FIXED
+	extend all the reference table:
+		add new column SHORT_CODE VARCHAR2(50)
